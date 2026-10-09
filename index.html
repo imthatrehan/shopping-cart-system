@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart System</title>
+    <script src="index.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header
+      class="flex justify-between items-center px-8 py-4 w-full border-b-2 bg-white"
+    >
+      <div class="flex gap-4 items-center w-[50%]">
+        <input
+          class="border-2 rounded-md px-3 py-1 w-2/3 search"
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search products..."
+        />
+        <label for="search">
+          <img
+            class="w-8 search-button cursor-pointer"
+            src="./search.svg"
+            alt=""
+          />
+        </label>
+      </div>
+      <div class="relative">
+        <p
+          class="cart-count absolute text-xs bg-black rounded-full text-white w-4 h-4 flex items-center justify-center top-1 left-1/2 -translate-x-[40%] -translate-y-[90%]"
+        ></p>
+        <img class="w-9 cart cursor-pointer" src="./cart.svg" alt="" />
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-8 py-6">
+      <div class="flex flex-col sm:flex-row gap-4 mb-6">
+        <select
+          id="categoryFilter"
+          class="category-filter border-2 rounded-md px-3 py-2 bg-white"
+        >
+          <option value="all">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Footwear">Footwear</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+
+        <select
+          id="sortFilter"
+          class="sort-filter border-2 rounded-md px-3 py-2 bg-white"
+        >
+          <option value="default">Sort by Price</option>
+          <option value="asc">Price: Low to High</option>
+          <option value="desc">Price: High to Low</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col lg:flex-row gap-6">
+        <section class="flex-1">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 card-container"
+          ></div>
+          <div class="empty-state text-center py-20">
+            <p class="text-5xl mb-4">🔍</p>
+            <h3 class="text-xl font-semibold">No products found</h3>
+            <p class="text-gray-500 mt-1">
+              Try a different search or category.
+            </p>
+          </div>
+        </section>
+        <aside
+          class="cart-summary w-full lg:w-72 h-fit bg-white border rounded-xl p-5 shadow-sm"
+        >
+          <h2 class="text-lg font-bold border-b pb-2 mb-3">Cart Summary</h2>
+          <div class="flex justify-between py-1">
+            <span>Total Items</span>
+            <span class="total-items font-semibold"></span>
+          </div>
+          <div class="flex justify-between py-1">
+            <span>Cart Total</span>
+            <span class="cart-total font-semibold"></span>
+          </div>
+          <div class="flex justify-between py-1">
+            <span>Most Expensive</span>
+            <span class="most-expensive font-semibold"></span>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

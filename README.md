@@ -50,4 +50,4 @@ This project focuses on real-world data manipulation without external UI librari
 
 1. Clone this repository:
    ```bash
-   git clone <your-repo-link>
+   git clone https://github.com/imthatrehan/shopping-cart-system
